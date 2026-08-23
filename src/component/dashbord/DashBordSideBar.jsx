@@ -5,12 +5,11 @@ import {Button, Drawer} from "@heroui/react";
 import { useSession } from '@/lib/auth-client';
 
   const navItems = [
-    {icon: House, label: "Home"},
-    {icon: Magnifier, label: "Search"},
-    {icon: Bell, label: "Notifications"},
-    {icon: Envelope, label: "Messages"},
-    {icon: Person, label: "Profile"},
-    {icon: Gear, label: "Settings"},
+    {icon: House, label: "dashbord", href:"/dashbord"},
+    {icon: Magnifier, label: "My Companny", href:"/"},
+    {icon: Bell, label: "Manage Job", href:"/"},
+    {icon: Envelope, label: "Application", href:"/"},
+    {icon: Gear, label: "Settings", href:"/"},
   ];
 
   const navlink= <nav className=" flex flex-col gap-1">
