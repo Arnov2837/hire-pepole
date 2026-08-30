@@ -55,7 +55,7 @@ const Navbar = () => {
           {/* Links */}
           <div className="flex items-center gap-10 text-center font-['Geist'] text-[16px] font-normal tracking-[-0.2px] text-white">
             <Link
-              href="#jobs"
+              href="/jobs"
               className="transition-colors hover:text-[#5C53FE]"
             >
               Browse Jobs

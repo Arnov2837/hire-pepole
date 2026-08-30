@@ -18,7 +18,7 @@ const CompanyProfile = ({recruiter, recruiterCompany}) => {
     website: "",
     description: "",
     profileImage: "",
-    companyId: recruiter.id,
+    recruiterId: recruiter.id,
   });
 
   const handleChange = (e) => {

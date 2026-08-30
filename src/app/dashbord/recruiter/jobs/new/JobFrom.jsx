@@ -6,7 +6,9 @@ import { toast } from "@heroui/react";
 import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 
-const JobForm = () => {
+const JobForm = ({company}) => {
+  console.log("motamuti kichu bugchi",company);
+  
   const { data: session } = useSession();
 
   const router = useRouter();
