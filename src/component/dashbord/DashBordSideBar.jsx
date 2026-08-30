@@ -3,25 +3,27 @@ import React from 'react';
 import {Bars, Bell, Envelope, Gear, House, Magnifier, Person} from "@gravity-ui/icons";
 import {Button, Drawer} from "@heroui/react";
 import { useSession } from '@/lib/auth-client';
+import Link from 'next/link';
 
   const navItems = [
-    {icon: House, label: "dashbord", href:"/dashbord"},
-    {icon: Magnifier, label: "My Companny", href:"/"},
-    {icon: Bell, label: "Manage Job", href:"/"},
+    {icon: House, label: "Company profile", href:"/dashbord/recruiter/company"},
+    {icon: Magnifier, label: "My Companny", href:"/dashbord/recruiter"},
+    {icon: Bell, label: "Manage Job", href:"/dashbord/recruiter/jobs"},
     {icon: Envelope, label: "Application", href:"/"},
     {icon: Gear, label: "Settings", href:"/"},
   ];
 
   const navlink= <nav className=" flex flex-col gap-1">
                 {navItems.map((item) => (
-                  <button
+                  <Link
+                   href={item.href}
                     key={item.label}
                     className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-default"
                     type="button"
                   >
                     <item.icon className="size-5 text-muted" />
                     {item.label}
-                  </button>
+                  </Link>
                 ))}
               </nav>
  

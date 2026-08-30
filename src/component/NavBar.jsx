@@ -8,6 +8,7 @@ import { useSession, signOut } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client"
+import { redirect } from "next/navigation";
 // import { useRouter } from "next/navigation";
 
 const Navbar = () => {
@@ -30,6 +31,7 @@ const Navbar = () => {
     await signOut();
   } catch (error) {
     console.error("Sign out error:", error);
+    redirect("/")
   }
 };
 
