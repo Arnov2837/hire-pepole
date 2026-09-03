@@ -48,8 +48,7 @@ const CompanyProfile = ({recruiter, recruiterCompany}) => {
       }
     );
 
-    const data = await res.json();
-    console.log("pic paici",data);
+
     
       
     if (data.success) {
@@ -70,7 +69,7 @@ const CompanyProfile = ({recruiter, recruiterCompany}) => {
 
     console.log("Company Data:", formData);
     
-     try {
+  try {
           const res = await createCompany(formData);
     
           console.log("Create company Response:", res);
@@ -85,7 +84,8 @@ const CompanyProfile = ({recruiter, recruiterCompany}) => {
           console.error("Create company error:", error);
     
           toast.error("Failed to create company");
-        }
+        }const data = await res.json();
+    console.log("pic paici",data);   
 
     // পরে এখানে API call কর
   };

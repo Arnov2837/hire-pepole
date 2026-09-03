@@ -9,7 +9,7 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client"
 import { redirect } from "next/navigation";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +25,16 @@ const Navbar = () => {
  
 
   // }
-  
+ 
   const handelSignOut = async () => {
   try {
+     
     await signOut();
+    
+   
   } catch (error) {
     console.error("Sign out error:", error);
-    redirect("/")
+     
   }
 };
 

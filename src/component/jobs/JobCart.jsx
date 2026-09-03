@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import React from "react";
 
 const JobCart = ({ post }) => {
@@ -29,9 +30,11 @@ const JobCart = ({ post }) => {
       </p>
 
       {/* Button */}
-      <button className="mt-5 w-full rounded-lg bg-black px-4 py-2.5 font-medium text-white transition hover:bg-gray-800">
+      <Link
+      href={`/jobs/${post._id}`}
+       className="mt-5 w-full rounded-lg bg-black px-4 py-2.5 font-medium text-white transition hover:bg-gray-800">
         View Details
-      </button>
+      </Link>
 
     </div>
   );

@@ -7,6 +7,10 @@ export const createCompany = async(newCompanyData)=>{
 
 }
 
+export const jobApplycation =async (newApplayData)=>{
+  return serverMutation('/api/applycation',newApplayData);
+}
+
 
 
 

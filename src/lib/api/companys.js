@@ -11,6 +11,11 @@ export const allPost = async () =>{
   return serverFetch(`/api/job`);
 }
 
+export const postId = async(jobId)=>{
+  return serverFetch(`/api/job/${jobId}`);
+}
+
+
 export const getLogInCompany = async()=>{
     const user = await getUserSession();
     return getRecruiterCompany(user?.id);
