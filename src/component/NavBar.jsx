@@ -72,7 +72,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="#pricing"
+              href="/plane"
               className="transition-colors hover:text-[#5C53FE]"
             >
               Pricing
