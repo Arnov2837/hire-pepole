@@ -5,6 +5,7 @@ const UserPlanePage = () => {
   const plans = [
     {
       name: "Basic",
+      id: "Basic",
       price: "5",
       description: "নিয়মিত Job Apply করার জন্য উপযুক্ত",
       applications: "Unlimited Job Apply",
@@ -18,8 +19,10 @@ const UserPlanePage = () => {
       button: "Subscribe Now",
       popular: true,
     },
+
     {
       name: "Pro",
+      id: "pro",
       price: "10",
       description: "যারা দ্রুত এবং বেশি Job Opportunity চান",
       applications: "Unlimited Job Apply",
@@ -38,7 +41,6 @@ const UserPlanePage = () => {
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-12">
       <div className="mx-auto max-w-5xl">
-
         {/* Header */}
         <div className="mb-12 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-blue-600">
@@ -57,7 +59,6 @@ const UserPlanePage = () => {
 
         {/* Plans */}
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -67,7 +68,6 @@ const UserPlanePage = () => {
                   : "border-gray-200"
               }`}
             >
-
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -123,11 +123,37 @@ const UserPlanePage = () => {
               </div>
 
               {/* Subscribe Button */}
-              <button
-                className="w-full rounded-xl bg-blue-600 px-5 py-3.5 font-semibold text-white transition hover:bg-blue-700 active:scale-[0.98]"
-              >
-                {plan.button}
-              </button>
+              <form action="/api/checkout_sessions" method="POST">
+                <input
+                  type="hidden"
+                  name="plane_id"
+                  value={plans.id}
+                />
+
+                <section>
+                  <button
+                    className="
+                      w-full
+                      rounded-xl
+                      bg-gradient-to-r from-blue-600 to-indigo-600
+                      px-6 py-3
+                      text-lg font-semibold text-white
+                      shadow-md
+                      transition-all duration-300
+                      hover:from-blue-700 hover:to-indigo-700
+                      hover:shadow-lg
+                      active:translate-y-0
+                      focus:outline-none
+                      focus:ring-4
+                      focus:ring-blue-200
+                    "
+                    type="submit"
+                    role="link"
+                  >
+                    Checkout
+                  </button>
+                </section>
+              </form>
             </div>
           ))}
         </div>
@@ -138,7 +164,6 @@ const UserPlanePage = () => {
             🔒 Secure payment powered by Stripe
           </p>
         </div>
-
       </div>
     </div>
   );
